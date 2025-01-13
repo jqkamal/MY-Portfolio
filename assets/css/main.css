@@ -597,14 +597,14 @@ section,
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 60px;
+    font-size: 50px;
   }
 
   .hero p {
     font-size: 12px;
   }
   .hero .typed {
-    font-size: 20px;
+    font-size: 15px;
   }
   .hero .social-links a {
     font-size: 20px;
