@@ -508,12 +508,13 @@
 
     </section><!-- /Contact Section -->
     <section class="container" id="contact">
-    <form action="./forms/contact.js" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+      <form action="./forms/contact.js" class="contact-form" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
     </form>
+    
   </section>
 
   </main>
@@ -568,6 +569,8 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="./forms/contact.js"></script>
+
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
     (function() {
