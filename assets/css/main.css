@@ -551,19 +551,19 @@ section,
 }
 
 .hero h1 {
-  font-size: 98px;
+  font-size: 200px;
   font-weight: 100;
   font-style: bold;
   letter-spacing: 2px;
   margin: 0;
-  font-size: 64px;
-  font-weight: 800;
+  font-size: 100px;
+  font-weight: 900;
   color: var(--contrast-color);
 }
 
 .hero p {
   
-  margin: 5px 0 0 0;
+  margin: 5px 5px 0 0;
   font-size: 36px;
   color: var(--primary-color);
   font-weight: 800;
@@ -596,12 +596,15 @@ section,
 }
 
 @media (max-width: 768px) {
-  .hero h2 {
-    font-size: 28px;
+  .hero h1 {
+    font-size: 70px;
   }
 
   .hero p {
-    font-size: 18px;
+    font-size: 12px;
+  }
+  .hero .typed {
+    font-size: 20px;
   }
   .hero .social-links a {
     font-size: 20px;
@@ -620,6 +623,7 @@ section,
   font-weight: 700;
   font-size: 24px;
   color: #000000;
+  font-style: var(--default-font);
 }
 
 .about .content ul {
