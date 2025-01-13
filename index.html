@@ -569,6 +569,20 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("your-user-id");
+    })();
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        emailjs.sendForm('your-service-id', 'your-template-id', this)
+            .then(() => alert('Message sent successfully!'))
+            .catch(err => alert('Failed to send message: ' + err));
+    });
+</script>
+
 
 </body>
 
