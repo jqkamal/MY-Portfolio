@@ -1,27 +1,26 @@
-const nodemailer = require('nodemailer');
-
-exports.handler = async (event) => {
-    const { name, email, message } = JSON.parse(event.body);
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'your-email@gmail.com',
-            pass: 'your-password',
-        },
-    });
-
-    const mailOptions = {
-        from: email,
-        to: 'your-email@gmail.com',
-        subject: `Contact form submission from ${name}`,
-        text: message,
-    };
-
-    try {
-        await transporter.sendMail(mailOptions);
-        return { statusCode: 200, body: 'Email sent successfully!' };
-    } catch (error) {
-        return { statusCode: 500, body: 'Failed to send email.' };
+fetch('forms/contact.js')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-};
+    return response.text();
+  })
+  .then(data => {
+    console.log(data); // Do something with the JS file content
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+  
+    emailjs.sendForm('your_service_id', 'your_template_id', this)
+      .then(() => {
+        alert('Message sent successfully!');
+      })
+      .catch((error) => {
+        alert('Failed to send message:', error);
+      });
+  });
+  
