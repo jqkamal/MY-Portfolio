@@ -81,3 +81,15 @@ contact.send().then(response => {
 }).catch(error => {
   console.error(error);
 });
+
+
+(function() {
+  emailjs.init("ramkamal5886@gmail.com");
+})();
+
+document.querySelector('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  emailjs.sendForm('your-service-id', 'your-template-id', this)
+      .then(() => alert('Message sent successfully!'))
+      .catch(err => alert('Failed to send message: ' + err));
+});

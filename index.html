@@ -34,9 +34,7 @@
   <link rel="stylesheet" href="./assets/css/project.css">
   <link rel="stylesheet" href="./assets/css/skills.css">
 
-  <form action="./forms/contact.js" method="post">
-    <!-- Form fields here -->
-</form>
+
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -509,13 +507,14 @@
       </div>
 
     </section><!-- /Contact Section -->
-    <form action="https://formspree.io/f/your-form-id" method="POST">
+    <section class="container" id="contact">
+    <form action="./forms/contact.js" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send</button>
     </form>
-    
+  </section>
 
   </main>
 
