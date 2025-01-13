@@ -471,7 +471,7 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="https://formspree.io/f/xbllwyja" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form action="https://formspree.io/f/xbllwyja" method="post" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -490,12 +490,7 @@
                   <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
                 </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <!-- <div class="error-message">Sorry, Try again</div> -->
-                  <div class="error-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
+                  <button class="btn btn-secondary w-100" type="submit">Send Message</button>
                 </div>
 
               </div>
@@ -563,6 +558,67 @@
   <script src="./forms/contact.js"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+  html
+
+
+
+
+<div class="col-lg-8">
+  <form id="contactForm" action="https://formspree.io/f/xbllwyja" method="post" data-aos="fade-up" data-aos-delay="200">
+    <div class="row gy-4">
+
+      <div class="col-md-6">
+        <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+      </div>
+
+      <div class="col-md-6 ">
+        <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+      </div>
+
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+      </div>
+
+      <div class="col-md-12">
+        <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+      </div>
+
+      <button class="btn btn-secondary w-100" type="submit">Send Message</button>
+    </div>
+  </form>
+  <div id="sentMessage" style="display: none;">Your message has been sent!</div>
+</div>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Send the form data to Formspree
+    fetch('https://formspree.io/f/xbllwyja', {
+      method: 'POST',
+      body: new FormData(this),
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.ok) {
+        // Show the "sent message" message
+        document.getElementById('sentMessage').style.display = 'block';
+        // Optionally, reset the form or redirect the user
+      } else {
+        // Handle the error (e.g., show an error message)
+        console.error('Form submission failed:', data);
+      }
+    })
+    .catch(error => {
+      // Handle any errors that occurred during the fetch
+      console.error('An error occurred:', error);
+    });
+  });
+</script>
 
 </body>
 
