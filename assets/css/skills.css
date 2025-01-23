@@ -166,7 +166,7 @@ section {
   }
 
   .carouselTrack {
-    width: calc(80px * 20);
+    width: calc(100px * 20);
     animation: infiniteLoop 12s linear infinite;
   }
 
@@ -188,7 +188,7 @@ section {
   }
 
   .carouselTrack {
-    width: calc(90px * 20);
+    width: calc(100px * 20);
     animation: infiniteLoop 11s linear infinite;
   }
 
