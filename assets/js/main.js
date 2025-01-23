@@ -231,3 +231,26 @@
 
 // -------------------------------------------------------------------------------
 
+document.addEventListener('DOMContentLoaded', () => {
+  const carouselTrack = document.querySelector('.carouselTrack');
+  const brandLogos = Array.from(document.querySelectorAll('.brandLogo'));
+
+  // Clone the brand logos to create a seamless loop
+  brandLogos.forEach(logo => {
+    const clone = logo.cloneNode(true);
+    carouselTrack.appendChild(clone);
+  });
+
+  let scrollAmount = 0;
+
+  const animateCarousel = () => {
+    scrollAmount -= 1; // Adjust speed here
+    if (Math.abs(scrollAmount) >= carouselTrack.scrollWidth / 2) {
+      scrollAmount = 0;
+    }
+    carouselTrack.style.transform = `translateX(${scrollAmount}px)`;
+    requestAnimationFrame(animateCarousel);
+  };
+
+  animateCarousel();
+});
