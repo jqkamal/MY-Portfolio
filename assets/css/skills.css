@@ -90,7 +90,7 @@
 /* ----------------------------------------------------------------- */
 /* loop */
 :root {
-  --off-white: #ffffff;
+  --off-white: #fafaf0;
   --light-gray: #9ca6a2;
 }
 
@@ -99,7 +99,7 @@
       transform: translate3d(0, 0, 0);
   }
   100% {
-      transform: translate3d(calc(-100px * 10), 0, 0);
+      transform: translate3d(-100%, 0, 0);
   }
 }
 
@@ -137,6 +137,8 @@ section {
 }
 
 .carouselTrack {
+  display: flex;
+  justify-content: space-between;
   width: calc(100px * 20);
   animation: infiniteLoop 10s linear infinite;
   animation-fill-mode: forwards;
@@ -146,6 +148,7 @@ section {
 .brandLogo {
   width: 100px;
   height: 50px;
+  display: flex;
   align-items: center;
   margin: auto;
   overflow: hidden;
