@@ -235,17 +235,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const carouselTrack = document.querySelector('.carouselTrack');
   const brandLogos = Array.from(document.querySelectorAll('.brandLogo'));
 
+  // Clear existing duplicates if any
+  const originalLogosCount = brandLogos.length;
+  while (carouselTrack.children.length > originalLogosCount) {
+    carouselTrack.removeChild(carouselTrack.lastChild);
+  }
+
   // Clone the brand logos to create a seamless loop
   brandLogos.forEach(logo => {
     const clone = logo.cloneNode(true);
     carouselTrack.appendChild(clone);
   });
 
+  // Adjust the total width of the track to fit all items seamlessly
+  const totalLogos = carouselTrack.children.length;
+  carouselTrack.style.width = `${totalLogos * 100}px`; // Assuming each logo is 100px wide
+
   let scrollAmount = 0;
 
   const animateCarousel = () => {
     scrollAmount -= 1; // Adjust speed here
-    if (Math.abs(scrollAmount) >= carouselTrack.scrollWidth / 2) {
+    if (Math.abs(scrollAmount) >= totalLogos * 100 / 2) {
       scrollAmount = 0;
     }
     carouselTrack.style.transform = `translateX(${scrollAmount}px)`;
