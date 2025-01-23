@@ -157,11 +157,11 @@ section {
     height: 50px;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
  .brandLogo svg {
   
     padding: 1px;
     width: 30px;
     height: 50px;
   }
-}
+} */
