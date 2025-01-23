@@ -160,7 +160,7 @@ section {
 /* Media Queries */
 
 /* For screens smaller than 600px */
-@media (max-width: 599px) {
+@media (min-width: 400px) {
     .brandsCarousel {
         max-width: 100%;
         max-height: 50px;
@@ -190,7 +190,7 @@ section {
 }
 
 /* For screens between 600px and 960px */
-@media (min-width: 600px) and (max-width: 959px) {
+@media (min-width: 412px) and (max-width: 959px) {
 
 
   .carouselTrack {
